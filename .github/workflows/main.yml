@@ -11,6 +11,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Start SOCKS5 Proxy via Chisel
-        uses: AnimMouse/SOCKS5-proxy-actions@v1
+        uses: animmouse/socks5-proxy-actions@d2f39a427b050b940257b96bb8d70b11a7bf7ef8  # استفاده از commit hash معتبر
         with:
           cloudflared-tunnel: true
