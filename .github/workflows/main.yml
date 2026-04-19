@@ -1,0 +1,16 @@
+name: 'SOCKS5 Proxy'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  socks5-proxy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Start SOCKS5 Proxy via Chisel
+        uses: AnimMouse/SOCKS5-proxy-actions@v1
+        with:
+          cloudflared-tunnel: true
