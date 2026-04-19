@@ -1,14 +1,15 @@
-name: run
+name: اجرای آنلاین کد پایتون
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: run
-        uses: actions/checkout@v2
-      - name: ok
-        uses: actions/setup-python@v2
+      - name: دریافت کد از مخزن
+        uses: actions/checkout@v4    # بعداً در مورد این تغییر صحبت می‌کنیم
+      - name: راه‌اندازی پایتون
+        uses: actions/setup-python@v5 # بعداً در مورد این تغییر صحبت می‌کنیم
         with:
           python-version: '3.10'
-      - name: script
-        run: python main.py
+      - name: اجرای اسکریپت
+        run: |
+          python main.py
