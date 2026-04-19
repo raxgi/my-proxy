@@ -1,16 +1,14 @@
-name: 'SOCKS5 Proxy'
-
-on:
-  workflow_dispatch:
-
+name: run
+on: [push]
 jobs:
-  socks5-proxy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Start SOCKS5 Proxy via Chisel
-        uses: animmouse/socks5-proxy-actions@d2f39a427b050b940257b96bb8d70b11a7bf7ef8  # استفاده از commit hash معتبر
+      - name: run
+        uses: actions/checkout@v2
+      - name: ok
+        uses: actions/setup-python@v2
         with:
-          cloudflared-tunnel: true
+          python-version: '3.10'
+      - name: script
+        run: python main.py
