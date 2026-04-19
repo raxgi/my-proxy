@@ -1,18 +1,14 @@
 # .github/workflows/python-run.yml
 name: اجرای آنلاین کد پایتون
 on: [push]
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: دریافت کد از مخزن
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: راه‌اندازی پایتون
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.10'
       - name: اجرای اسکریپت
